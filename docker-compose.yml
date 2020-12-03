@@ -38,6 +38,20 @@ services:
         networks:
             - beatrzbrf11
             
+    angular-service: # The name of the service
+        image: beatrizbrffiap/receitadespesaservice
+        container_name: angularcontainer  # Container name
+        build: ./angulardockerproject # Location of our Dockerfile
+        depends_on: 
+          - receitadespesaservice # This service depends on mysql. Start that first.
+        volumes: # Volume binding
+            - './angulardockerproject:/usr/src/app' 
+        ports: 
+            - '4200:4200' # Port mapping
+        command: > 
+            bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"     
+        networks:
+            - beatrzbrf11   
 networks: 
     beatrzbrf11:
         external: true
