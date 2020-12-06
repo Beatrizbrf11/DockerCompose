@@ -1,17 +1,6 @@
 version: "3"
 
 services:
-    visualizador:
-        image: dockersamples/visualizer
-        volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
-        ports:
-            - 8090:8090
-        deploy:
-            placement:
-                constraints:
-                    - node.role == manager
-                    
     receitadespesaservice:
         image: beatrizbrffiap/receitadespesaservice
         ports:
@@ -47,9 +36,9 @@ services:
         volumes: # Volume binding
             - './angulardockerproject:/usr/src/app' 
         ports: 
-            - '4200:4200' # Port mapping
+            - '8000:80' # Port mapping
         command: > 
-            bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"     
+            bash -c "npm install && ng serve --host 0.0.0.0 --port 8000"     
         networks:
             - beatrzbrf11   
 networks: 
