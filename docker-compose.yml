@@ -28,7 +28,7 @@ services:
             - beatrzbrf11
             
     angular-service: # The name of the service
-        image: beatrizbrffiap/receitadespesaservice
+        image: beatrizbrffiap/front
         container_name: angularcontainer  # Container name
         build: ./angulardockerproject # Location of our Dockerfile
         depends_on: 
