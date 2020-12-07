@@ -35,8 +35,6 @@ services:
           - receitadespesaservice # This service depends on mysql. Start that first.
         ports: 
             - '8000:80' # Port mapping
-        command: > 
-            bash -c "npm install && ng serve --host 0.0.0.0 --port 8000" 
         networks:
             - beatrzbrf11   
 networks: 
