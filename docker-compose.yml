@@ -29,7 +29,6 @@ services:
             
     angular-service: # The name of the service
         image: beatrizbrffiap/front
-        container_name: angularcontainer  # Container name
         build: .
         depends_on: 
           - receitadespesaservice # This service depends on mysql. Start that first.
