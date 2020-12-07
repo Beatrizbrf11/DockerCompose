@@ -34,7 +34,7 @@ services:
         depends_on: 
           - receitadespesaservice # This service depends on mysql. Start that first.
         ports: 
-            - '8000:8080' # Port mapping
+            - '8000:80' # Port mapping
         networks:
             - beatrzbrf11   
 networks: 
