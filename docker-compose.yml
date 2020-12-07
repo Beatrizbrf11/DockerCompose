@@ -4,7 +4,7 @@ services:
     receitadespesaservice:
         image: beatrizbrffiap/receitadespesaservice
         ports:
-            - 8080:8080
+            - 8080:80
         restart: always
         depends_on: 
           - db # This service depends on mysql. Start that first.
