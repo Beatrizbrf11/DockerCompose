@@ -30,15 +30,11 @@ services:
     angular-service: # The name of the service
         image: beatrizbrffiap/front
         container_name: angularcontainer  # Container name
-        build: ./angulardockerproject # Location of our Dockerfile
+        build: .
         depends_on: 
           - receitadespesaservice # This service depends on mysql. Start that first.
-        volumes: # Volume binding
-            - './angulardockerproject:/usr/src/app' 
         ports: 
-            - '8000:80' # Port mapping
-        command: > 
-            bash -c "npm install && ng serve --host 0.0.0.0 --port 8000"     
+            - '8081:80' # Port mapping
         networks:
             - beatrzbrf11   
 networks: 
